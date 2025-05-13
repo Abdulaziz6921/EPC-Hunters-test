@@ -1,0 +1,103 @@
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-overlay.active .popup {
+  transform: translateY(0);
+}
+
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.close-popup svg {
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+}
+
+.popup-content {
+  overflow-y: auto;
+  color: black;
+  text-align: center;
+  line-height: 1.6;
+  padding-right: 10px;
+  margin: 40px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1;
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup {
+    padding: 25px 15px;
+  }
+
+  .close-popup {
+    top: 15px;
+    right: 15px;
+  }
+}
