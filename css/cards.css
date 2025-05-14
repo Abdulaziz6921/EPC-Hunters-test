@@ -148,3 +148,9 @@
     display: none;
   }
 }
+@media (min-width: 1550px) {
+  .line-2 {
+    width: 274px;
+    height: 293px;
+  }
+}

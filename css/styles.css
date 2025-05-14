@@ -96,6 +96,8 @@ button {
 .main-content {
   position: relative;
   width: 100%;
+  max-width: 1700px;
+  margin: auto;
   z-index: 2;
 }
 
